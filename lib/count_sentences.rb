@@ -16,6 +16,6 @@ self.end_with?("!")
   end
 
   def count_sentences
-    self.split.map {self.sentence? || self.question? || self.exclamation?}
+    self.split.select {|segment| segment.sentence? || segment.question? || segment.exclamation?}
   end
 end
